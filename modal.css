@@ -1,0 +1,54 @@
+input {
+	display: none;
+}
+
+.modal-container {
+	display: none;
+	transition: 1s ease-in-out ;
+}
+
+#checkbtn:checked + .modal-container {
+	position: fixed;
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-data {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    padding: 2rem 1rem 0.1rem 1rem;
+    color: white;
+    background-color: #1b1b1b;
+    margin-top: 10%;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0px 0px 8px 0px blue;
+}
+
+#checkbtn:checked + .modal-container .modal-data{
+    animation: anim 0.35s ease-in-out 1 alternate;
+}
+@keyframes anim {
+    from{
+        bottom: 100%;
+    }
+    to{
+        bottom: 0;
+    }
+}
+
+#closebtn {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	transition: all 0.3s;
+}
+#closebtn:hover {
+	cursor: pointer;
+	transform: scale(1.25);
+}
